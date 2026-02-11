@@ -7,6 +7,6 @@
 # 1. Aplicación de consola (Para medir el uso del leguaje de programación)
 # 2. Aplicación subida a repositorio.
 # 3. Aplicación conectada a bases de datos con comunicación. (Persistencia)
-# 4. Aplicación con pruebas de Postman
+# 4. API con pruebas de Postman.
 # 5. Aplicación con interfáz gráfica.
 

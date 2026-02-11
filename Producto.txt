@@ -1,0 +1,652 @@
+
+'''producto={
+        'Id':'',
+        'nombre': '',
+        'categoria': '',
+        'precio': '',
+        'stock': ''
+    }
+    producto['Id']=input('Ingrese Id: ')#id
+    producto['nombre']=input('Ingrese nombre: ')#nombre
+    producto['categoria']=input('Ingrese categoria: ')#categoria
+    producto['precio']=input('Ingrese precio: ')#precio
+    producto['stock']=input('Ingrese stock: ')#stock
+    
+    print(producto)
+
+    
+    #Diccionario del inventario
+    producto1={
+    'Id':'001',
+    'nombre': 'Denim',
+    'categoria': 'Tejido_de_punto',
+    'precio': '10000',
+    'stock': '500'
+    }
+    producto2={
+    'Id':'002',
+    'nombre': 'Tul',
+    'categoria': 'Tejido_plano',
+    'precio': '12000',
+    'stock': '300'
+    }
+    producto3={
+    'Id':'003',
+    'nombre': 'Satin',
+    'categoria': 'Tejido_de_punto',
+    'precio': '11000',
+    'stock': '250'
+    }
+    producto4={
+    'Id':'004',
+    'nombre': 'Microfibra',
+    'categoria': 'Tejido_plano',
+    'precio': '16000',
+    'stock': '300'
+    }
+    producto5={
+    'Id':'005',
+    'nombre': 'Organza',
+    'categoria': 'Tejido_de_punto',
+    'precio': '14000',
+    'stock': '230'
+    }
+    Inventario=[producto1,producto2,producto3,producto4,producto5]
+    print (Inventario)
+    print ('Los datos asociados al producto 1 son: ',producto1)
+    
+    
+    ***
+    
+    Solucionar el manejo del arreglo con:
+    
+    push
+    pop
+    slice
+    find=next
+    findindex   
+    
+    Equivalente
+    
+    lista=[1,2,3,4,5]
+    lista.append(6) #Añadir
+    Output ===> [1,2,3,4,5,6]
+    
+    listar.clear() #Vacía todos los items de una lista
+    lista 
+    Output ===>[]
+    
+    extend()
+    li1=[1,2,3]
+    li2=[4,5,6]
+    li1.extend(li2)
+    li1
+    Output ===>[1,2,3,4,5,6]
+    
+    count()
+    ['Hola','mundo','mundo'].count('Hola')
+    Output ===> 1
+    
+    index()
+    ['Hola','mundo','mundo'].index('mundo')
+    Output ===> 1
+    
+    insert()
+    
+    li=[1,2,3]
+    li.insert(0,0)
+    li
+    Output ===>[0,1,2,3]
+    
+    
+    insert con len
+    
+    li=[5,10,15,25]
+    n=len(li)
+    li.insert(n,30)
+    li
+    
+    Output ===> [5,10,15,20,25,30]
+    
+    li.insert(999,35)
+    li
+    
+    [5,10,15,20,25,30,35]
+    
+    pop()
+    
+    li=[10,20,30,40,50]
+    print(li.pop())
+    print(li)
+    
+    Output ===> 50 #al ser el último elemento
+    Output ===> [10,20,30,40]
+    
+    li=[10,20,30,40,50]
+    print(li.pop(10))
+    print(li)
+    
+    Output ===> 50 #al ser el último elemento
+    Output ===> [20,30,40]
+    
+    remove()
+    li = [20,30,30,30,40]
+    li.remove(30)
+    print(li)
+    
+    Out ===> [20,30,30,40]
+    
+    reverse()
+    
+    
+    li = [20,30,30,40]
+
+    li.reverse()
+    print(li)
+    [40,30,30,20]
+    Out ===> [40,30,30,20]
+    
+    reverse en cadena
+    
+    li= list('Hola Mundo')#se convierte a arreglo la cadena
+    li.reverse()
+    cadena = ''.join(lista)
+    cadena
+    
+    Output ===> 'odnum aloH'
+    
+    
+    sort()
+    lista = [5,-10,35,0,-65,100]
+    lista.sort()
+    lista
+    
+    [-65, -10, 0, 5, 35, 100]
+    
+        
+    
+    ***
+   
+    
+   
+    
+#Definición de la función main
+def main():
+    menu() #Se llama a la función menú desde el main
+    opcion=int(input('Seleccione la opción: '))    #Variable opción para ingresar valor acorde al menú
+    if (opcion==1):
+        agregar()
+    elif(opcion==2):
+        consultar()
+    elif(opcion==3):
+        modificar()
+    elif(opcion==4):
+        borrar()
+    elif(opcion==5):
+        salir()
+    else:
+        print('La opción no es válida')
+        #Fin de la función main    
+
+#Definición de la función menú
+
+def menu():
+    print('***Menú de inicio***')
+    print('1.Agregar producto en el inventario')
+    print('2.Consultar productos del inventario')
+    print('3.Actualizar producto del inventario')
+    print('4.Borrar producto del inventario')
+    print('5.Salir')
+    
+
+#Definicion de la variable Inventario
+inventario = []    
+#Definición de la función agregar
+def agregar():
+    print('Ingrese los datos del producto a agregar')
+
+#Creación del diccionario
+    producto={
+        'Id':'',
+        'nombre': '',
+        'categoria': '',
+        'precio': '',
+        'stock': ''
+    }
+    producto['Id']=input('Ingrese Id: ')#id
+    producto['nombre']=input('Ingrese nombre: ')#nombre
+    producto['categoria']=input('Ingrese categoria: ')#categoria
+    producto['precio']=input('Ingrese precio: ')#precio
+    producto['stock']=input('Ingrese stock: ')#stock
+    
+    #print(producto)
+
+    inventario.append(producto)
+    print(f'El inventario actualizado es: {inventario}\n')
+    producto.keys()
+
+    print('desea agregar otro producto ? S/N')
+    
+
+    respuesta=input()
+
+    if respuesta == 'S':
+        agregar()
+    else:
+        main()
+
+#Definición de la función consultar
+def consultar():#Listar el array
+        print('***Seleccione una opción: ***')
+        print('1.lista de productos del inventario')
+        print('2.Consulta de producto por Id\n')
+        
+        #Condicional de consulta vacia
+        #if len(inventario) > 0 :
+        if not inventario:
+            print('Aún no hay productos en el inventario \n')
+        else:
+            opcionconsulta =int(input())
+            if opcionconsulta == 1:
+                for i in inventario:
+                   print(i)
+            elif opcionconsulta == 2:
+                idconsulta = input('ingrese el Id del producto: ')
+                for d in inventario:
+                    a = d['Id']
+                    if d['Id'] == idconsulta:
+                     print(f'Los datos del producto con el Id{idconsulta} son: {d}')
+                     #print(idconsulta)
+                     #break  
+                    else: 
+                        print("Id inválido: \n")
+            else:
+                 print ('La opción no es válida \n')
+        main()
+    #print('Los datos del producto son: ', id, nombre, categoria,precio,stock )
+    #print('Lista de los productos')
+    #for i <= inventario.
+    #if producto['Id'] == int(input('')):
+         #  print('Los datos relacionados al producto seleccionado son: ', producto)
+
+
+#Definición de la función modificar
+def modificar():
+    print('Ingrese el id del producto a modificar')
+
+#Definición de la función borrar
+def borrar():
+    print('Ingrese el Id del producto a borrar del inventario')
+
+#Definición de la función salir
+def salir():
+    print('¡Hasta pronto!')
+
+#Definición de la función main    
+main()#Ejecución de la función main
+
+ #Definición de la función main
+#Quedan validaciones
+def main():
+    menu() #Se llama a la función menú desde el main
+    opcion=int(input('Seleccione la opción: '))    #Variable opción para ingresar valor acorde al menú
+    if (opcion==1):
+        agregar()
+    elif(opcion==2):
+        consultar()
+    elif(opcion==3):
+        modificar()
+    elif(opcion==4):
+        borrar()
+    elif(opcion==5):
+        salir()
+    else:
+        print('La opción no es válida')
+        #Fin de la función main    
+
+#Definición de la función menú
+
+def menu():
+    print('***Menú de inicio***')
+    print('1.Agregar producto en el inventario')
+    print('2.Consultar productos del inventario')
+    print('3.Actualizar producto del inventario')
+    print('4.Borrar producto del inventario')
+    print('5.Salir\n')
+    
+
+#Definicion de la variable Inventario
+inventario = []    
+#Definición de la función agregar
+def agregar():
+    print('Ingrese los datos del producto a agregar\n')
+
+#Creación del diccionario
+    producto={
+        'Id':'',
+        'nombre': '',
+        'categoria': '',
+        'precio': '',
+        'stock': ''
+    }
+    producto['Id']=input('Ingrese Id: ')#id
+    producto['nombre']=input('Ingrese nombre: ')#nombre
+    producto['categoria']=input('Ingrese categoria: ')#categoria
+    producto['precio']=input('Ingrese precio: ')#precio
+    producto['stock']=input('Ingrese stock:')#stock
+    
+    #print(producto)
+
+    inventario.append(producto)
+    print(f'El producto, {producto["nombre"]} se ha agregado\n')
+
+    print('desea agregar otro producto ? S/N \n')
+    
+
+    respuesta=input()
+
+    if respuesta == 'S':
+        agregar()
+    else:
+        main()
+#Definición de la función verificar
+
+
+#Definición de la función consultar
+def consultar():#Listar el array
+        
+        if not inventario:
+            print('Aún no hay productos en el inventario \n')
+            return
+        
+        print('***Seleccione una opción: ***')
+        print('1.lista de productos del inventario')
+        print('2.Consulta de producto por Id\n')
+            
+        opcionconsulta =int(input())
+        if opcionconsulta == 1:
+            print('Inventario: \n')
+            for i in inventario: #las variables iteradoras deben representar
+                print(i,'\n')
+        elif opcionconsulta == 2: #Dos palabras separa con _
+            try:
+                idconsulta = input('ingrese el Id del producto: \n')
+                for d in inventario: #las variables iteradoras deben representar
+               
+                    if d['Id'] == idconsulta:
+                        print(f'Los datos del producto con el Id {idconsulta} son: {d} \n')
+            except: 
+                print("Id inválido: \n")
+                
+        else:
+                print ('La opción no es válida \n') #Revisar la excepción
+        main()
+#Definición de la función verificar existencia
+def verficarExistencia (id):#verificar_existencia
+    for i in inventario: #las variables iteradoras deben representar
+        if i['Id'] == id:
+            print('existe el producto \n', id) 
+     
+           
+#Definición de la función modificar
+def modificar():
+                idModificar = input('ingrese el Id del producto a modificar: \n')
+                for d in inventario:
+                    if d['Id'] == idModificar:
+                        print('Seleccione el dato que desea modificar del producto: \n')
+                        print("1. Id")
+                        print("2. Nombre")
+                        print("3. Categoría")
+                        print("4. Precio")
+                        print("5. Stock \n")
+                        
+                        #Condicional anidada para obtener los atributos del producto
+                        selModificar =int(input())
+                        if selModificar == 1:
+                            d['Id']= input('Ingrese el nuevo Id: \n')
+                        elif selModificar == 2:
+                            d['nombre']= input('Ingrese el nuevo nombre: \n')
+                        elif selModificar == 3:
+                            d['categoria']= input('Ingrese la nueva categoría: \n')
+                        elif selModificar == 4:
+                            d['precio']= input('Ingrese la nueva cantidad en stock: \n')
+                        elif selModificar == 5:
+                            d['stock']= input('Ingrese la nueva cantidad en stock: \n')
+                        else:
+                            print('opción inválida')
+                            
+                        print('actualización exitosa, \nLos nuevos datos del producto son: \n')
+                        for d in inventario:
+                            print (d ,'\n')
+                        
+                        main()    
+                        
+    
+#Definición de la función borrar
+def borrar():
+    idBorrar = input('ingrese el Id del producto a eliminar: \n')
+    for d in inventario:
+                    if d['Id'] == idBorrar:
+                        inventario.remove(d)
+                        print ('Elemento eliminado con éxito\nEl inventario actualizado es: \n')
+                        for d in inventario:
+                            print(d ,'\n')
+    main()
+
+#Definición de la función salir
+def salir():
+    print('¡Hasta pronto!\n')
+
+#Definición de la función main    
+main()#Ejecución de la función main
+ 
+ 
+ Base de datos (Laragon MySQL)
+
+ /*USE `inventario_prueba`;*/
+/*CREATE TABLE productos (
+Id INT PRIMARY KEY,
+nombre VARCHAR(50),
+categoria VARCHAR(50),
+precio INT,
+stock INT);
+
+
+/*USE`inventario_prueba`*/
+
+INSERT INTO `productos` (Id,nombre,categoria,precio,stock) 
+VALUES 
+(001,'Denim', 'Tejido de punto', 10000, 500)
+(002,'Seda', 'Tejido plano', 15000, 300),
+(003,'Anti fluido', 'Tejido de punto', 8000, 400),
+(004,'Lino', 'Tejido plano', 16000, 350),
+(005,'Popelina', 'Tejido plano', 12000, 550);*/
+
+
+#Función para conectar la DB con el script de Python
+
+from getpass import getpass
+from mysql.connector import connect, Error
+
+try:
+    with connect(
+        host="localhost",
+        user=input("Enter username: "),
+        password=getpass("Enter password: "),
+    ) as connection:
+        print(connection)
+except Error as e:
+    print(e)
+
+
+
+'''
+
+'''cursor = conexion.cursor()
+query = "SHOW DATABASES"
+cursor.execute(query)
+resultados = cursor.fetchall()
+for fila in resultados:
+       print(fila)'''
+
+
+
+
+
+''''
+#Definición de la función main
+#Quedan validaciones
+def main():
+    
+    menu() #Se llama a la función menú desde el main
+    opcion=int(input('Seleccione la opción: '))    #Variable opción para ingresar valor acorde al menú
+    if (opcion==1):
+        agregar()
+    elif(opcion==2):
+        consultar()
+    elif(opcion==3):
+        modificar()
+    elif(opcion==4):
+        borrar()
+    elif(opcion==5):
+        salir()
+    else:
+        print('La opción no es válida')
+        #Fin de la función main    
+
+#Definición de la función menú
+
+def menu():
+    print('***Menú de inicio***')
+    print('1.Agregar producto en el inventario')
+    print('2.Consultar productos del inventario')
+    print('3.Actualizar producto del inventario')
+    print('4.Borrar producto del inventario')
+    print('5.Salir\n')
+    
+
+#Definicion de la variable Inventario
+inventario = []    
+#Definición de la función agregar
+def agregar():
+    print('Ingrese los datos del producto a agregar\n')
+
+#Creación del diccionario
+    producto={
+        'Id':'',
+        'nombre': '',
+        'categoria': '',
+        'precio': '',
+        'stock': ''
+    }
+    producto['Id']=input('Ingrese Id: ')#id
+    producto['nombre']=input('Ingrese nombre: ')#nombre
+    producto['categoria']=input('Ingrese categoria: ')#categoria
+    producto['precio']=input('Ingrese precio: ')#precio
+    producto['stock']=input('Ingrese stock:')#stock
+    
+    #print(producto)
+
+    inventario.append(producto)
+    print(f'El producto, {producto["nombre"]} se ha agregado\n')
+
+    print('desea agregar otro producto ? S/N \n')
+    
+
+    respuesta=input()
+
+    if respuesta == 'S':
+        agregar()
+    else:
+        main()
+#Definición de la función verificar
+
+
+#Definición de la función consultar
+def consultar():#Listar el array
+        
+        if not inventario:
+            print('Aún no hay productos en el inventario \n')
+            return
+        
+        print('***Seleccione una opción: ***')
+        print('1.lista de productos del inventario')
+        print('2.Consulta de producto por Id\n')
+            
+        opcionconsulta =int(input())
+        if opcionconsulta == 1:
+            print('Inventario: \n')
+            for i in inventario: #las variables iteradoras deben representar
+                print(i,'\n')
+        elif opcionconsulta == 2: #Dos palabras separa con _
+            try:
+                idconsulta = input('ingrese el Id del producto: \n')
+                for d in inventario: #las variables iteradoras deben representar
+               
+                    if d['Id'] == idconsulta:
+                        print(f'Los datos del producto con el Id {idconsulta} son: {d} \n')
+            except: 
+                print("Id inválido: \n")
+                
+        else:
+                print ('La opción no es válida \n') #Revisar la excepción
+        main()
+#Definición de la función verificar existencia
+def verficarExistencia (id):#verificar_existencia
+    for i in inventario: #las variables iteradoras deben representar
+        if i['Id'] == id:
+            print('existe el producto \n', id) 
+     
+           
+#Definición de la función modificar
+def modificar():
+                idModificar = input('ingrese el Id del producto a modificar: \n')
+                for d in inventario:
+                    if d['Id'] == idModificar:
+                        print('Seleccione el dato que desea modificar del producto: \n')
+                        print("1. Id")
+                        print("2. Nombre")
+                        print("3. Categoría")
+                        print("4. Precio")
+                        print("5. Stock \n")
+                        
+                        #Condicional anidada para obtener los atributos del producto
+                        selModificar =int(input())
+                        if selModificar == 1:
+                            d['Id']= input('Ingrese el nuevo Id: \n')
+                        elif selModificar == 2:
+                            d['nombre']= input('Ingrese el nuevo nombre: \n')
+                        elif selModificar == 3:
+                            d['categoria']= input('Ingrese la nueva categoría: \n')
+                        elif selModificar == 4:
+                            d['precio']= input('Ingrese la nueva cantidad en stock: \n')
+                        elif selModificar == 5:
+                            d['stock']= input('Ingrese la nueva cantidad en stock: \n')
+                        else:
+                            print('opción inválida')
+                            
+                        print('actualización exitosa, \nLos nuevos datos del producto son: \n')
+                        for d in inventario:
+                            print (d ,'\n')
+                        
+                        main()    
+                        
+    
+#Definición de la función borrar
+def borrar():
+    idBorrar = input('ingrese el Id del producto a eliminar: \n')
+    for d in inventario:
+                    if d['Id'] == idBorrar:
+                        inventario.remove(d)
+                        print ('Elemento eliminado con éxito\nEl inventario actualizado es: \n')
+                        for d in inventario:
+                            print(d ,'\n')
+    main()
+
+#Definición de la función salir
+def salir():
+    print('¡Hasta pronto!\n')
+
+#Definición de la función main    
+main()#Ejecución de la función main
+'''
